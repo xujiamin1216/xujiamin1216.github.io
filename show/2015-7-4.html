@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<title>遇见，幸福</title>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+.page-arrow {
+	width: 24px;
+	height: 14px;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -14px;
+}
+.page-arrow:after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 100%;
+  background: url(/img/show/2015-7-4/page-arrow.png);
+  background-size: cover;
+	-webkit-animation: pagearrow 1.5s infinite ease-in-out;
+	-moz-animation: pagearrow 1.5s infinite ease-in-out;
+	animation: pagearrow 1.5s infinite ease-in-out;
+}
+@-webkit-keyframes pagearrow {
+	0%,30% {opacity: 0;-webkit-transform: translate(0,10px);}
+	60% {opacity: 1;-webkit-transform: translate(0,0);}
+	100% {opacity: 0;-webkit-transform: translate(0,-8px);}
+}
+@-moz-keyframes pagearrow {
+	0%,30% {opacity: 0;-moz-transform: translate(0,10px);}
+	60% {opacity: 1;-moz-transform: translate(0,0);}
+	100% {opacity: 0;-moz-transform: translate(0,-8px);}
+}
+@keyframes pagearrow {
+	0%,30% {opacity: 0;transform: translate(0,10px);}
+	60% {opacity: 1;transform: translate(0,0);}
+	100% {opacity: 0;transform: translate(0,-8px);}
+}
+.fttpage-wrapper {
+    height: 100%;
+    position: relative;
+}
+.fttpage {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    -webkit-transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    -webkit-transform: translate3d(0, 0%, 0);
+    -webkit-transform: translate3d(0, 0%, 0);
+}
+.fttpage.current {
+    -webkit-transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -100%, 0);
+}
+.fttpage.previous {
+    -webkit-transform: translateY(-200%);
+    -webkit-transform: translateY(-200%);
+}
+#page1 {
+    background-image: url(/img/show/2015-7-4/page1.jpg);
+}
+#page1 h2 {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    border-radius: 20px 0 0 20px;
+    background: #fff;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -webkit-transition: .4s linear;
+}
+#page1 h2.show {
+    -webkit-transform: translate3d(0%, 0, 0);
+}
+#page2 {
+  background-image: url(/img/show/2015-7-4/page2.jpg);
+}
+.photo-panel {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.fttpage > div, #page2 > div, #page3 > div {
+    width: 240px;
+    margin: 40px auto 0;
+}
+#page2 .photo-panel, #page3 .photo-panel {
+    -webkit-transform: rotate(0deg);
+    -webkit-transition: .4s ease-in-out;
+}
+#page2 .photo-panel.show {
+    -webkit-transform: rotate(-346deg);
+}
+#page4 > div p, #page2 > div p, #page3 > div p {
+    margin-top: 50px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-transform: scale(0);
+    -webkit-transition: .4s linear;
+}
+#page4 > div p.show, #page2 > div p.show, #page3 > div p.show {
+    -webkit-transform: scale(1);
+}
+#page3 {
+  background-image: url(/img/show/2015-7-4/page3.jpg);
+}
+#page3 .photo-panel.show {
+    -webkit-transform: rotate(346deg);
+}
+#page4 {
+    background-image: url(/img/show/2015-7-4/page4.jpg);
+}
+#page4 img {
+    border-radius: 50% 50%;
+    -webkit-transform: scale(0);
+    -webkit-transition: .4s ease;
+}
+#page4 img.show {
+    -webkit-transform: scale(1);
+}
+#page5 {
+    background-image: url(/img/show/2015-7-4/page5.jpg);
+}
+#page5 .photo-panel {
+    -webkit-transition: 0.4s ease;
+}
+#page5 .photo-panel.show {
+    -webkit-transform: scale(-1, 1);
+}
+.my-wish {
+    box-sizing: border-box;
+    padding: 0 20px;
+    -webkit-transition: 0.4s linear;
+}
+.my-wish.first {
+    margin: 20px 0 10px 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+}
+.my-wish.second {
+    text-align: right;
+    -webkit-transform: translate3d(100%, 0, 0);
+}
+.my-wish.first.show, .my-wish.second.show {
+    -webkit-transform: translate3d(0%, 0, 0);
+}
+.my-wish span {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    padding: 0 10px;
+    color: #fff;
+}
+.my-wish.first span {
+    margin-left: 20px;
+}
+.my-wish.second span {
+    margin-right: 20px;
+}
+.my-wish span i {
+    position: absolute;
+    top: 0;
+    border-color: transparent rgba(0, 0, 0, 0.7);
+    border-style: solid;
+}
+.my-wish.first span i {
+    border-width: 20px 0 20px 20px;
+    right: -20px;
+}
+.my-wish.second span i {
+    border-width: 20px 20px 20px 0;
+    left: -20px;
+}
+.my-wish span:before, .my-wish span:after {
+    content: "";
+    position: absolute;
+    border-color: transparent rgba(0, 0, 0, 0.7);
+    border-style: solid;
+}
+.my-wish.first span:before, .my-wish.first span:after {
+    border-width: 14px 0 14px 14px;
+    left: -12px;
+}
+.my-wish.second span:before, .my-wish.second span:after {
+    border-width: 14px 14px 14px 0;
+    right: -12px;
+}
+.my-wish span:before {
+    top: -9px;
+}
+.my-wish span:after {
+    bottom: -9px;
+}
+.my-wish.first span:after {
+    -webkit-transform: rotate(45deg);
+}
+.my-wish.first span:before {
+    -webkit-transform: rotate(-45deg);
+}
+.my-wish.second span:before {
+    -webkit-transform: rotate(45deg);
+}
+.my-wish.second span:after {
+    -webkit-transform: rotate(-45deg);
+}
+</style>
+</head>
+<body>
+<ul class="fttpage-wrapper">
+    <li id="page1" class="fttpage current">
+        <h2 data-role="animation">遇见，幸福</h2>
+        <i class="page-arrow"></i>
+    </li>
+    <li id="page2" class="fttpage">
+        <div>
+            <div data-role="animation" class="photo-panel">
+                <img src="/img/show/2015-7-4/smile.jpg" />
+            </div>
+            <p data-role="animation">笑，可以融化一切</p>
+        </div>
+        <i class="page-arrow"></i>
+    </li>
+    <li id="page3" class="fttpage">
+        <div>
+            <div data-role="animation" class="photo-panel">
+                <img src="/img/show/2015-7-4/chaocai.jpg" />
+            </div>
+            <p data-role="animation">专注，只为做出美味</p>
+        </div>
+        <i class="page-arrow"></i>
+    </li>
+    <li id="page4" class="fttpage">
+        <div>
+            <img data-role="animation" src="/img/show/2015-7-4/eat.jpg" />
+            <p data-role="animation">恬静，只为享受美食</p>
+        </div>
+        <i class="page-arrow"></i>
+    </li>
+    <li id="page5" class="fttpage">
+        <div>
+            <div data-role="animation" class="photo-panel">
+                <img src="/img/show/2015-7-4/person.jpg">
+            </div>
+        </div>
+        <p data-role="animation" class="my-wish first"><span>快乐生活<i></i></span></p>
+        <p data-role="animation" class="my-wish second"><span>笑着过每一天<i></i></span></p>
+    </li>
+</ul>
+    <script type="text/javascript" src="/js/zepto.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        function VPage() {
+            this.index = 0;
+            init.call(this);
+        }
+        VPage.prototype.next = function() {
+            var elems = $(".fttpage");
+            if (elems.length - 1 === this.index) {
+                return;
+            }
+            $(elems[this.index]).addClass("previous");
+            elemReset(elems[this.index]);
+            this.index++;
+            $(elems[this.index]).addClass("current");
+            elemShow(elems[this.index]);
+        };
+        VPage.prototype.previous = function() {
+            var elems = $(".fttpage");
+            if (0 === this.index) {
+                return;
+            }
+            $(elems[this.index]).removeClass("current");
+            elemReset(elems[this.index]);
+            this.index--;
+            $(elems[this.index]).removeClass("previous");
+            elemShow(elems[this.index]);
+        };
+        function init() {
+            var that = this;
+            $(".fttpage-wrapper").on("touchstart", function (e) {
+                var et = e.touches[0];
+                that._startLocation = {
+                    x: et.pageX,
+                    y: et.pageY
+                };
+                that._isStart = false;
+            }).on("touchmove", function (e) {
+                if (e.touches.length > 1 || e.scale && e.scale !== 1) {
+                    return;
+                }
+                var et = e.touches[0],
+                    distY = et.pageY - that._startLocation.y;
+                if (!that._isStart) {
+                    that._isStart = Math.abs(distY) > Math.abs(et.pageX - that._startLocation.x); //不是上下
+                }
+                if (that._isStart) {
+                    e.preventDefault();
+                    that._distY = distY;
+                }
+            }).on("touchend touchcancel", function (e) {
+                if (that._isStart) {
+                    if (that._distY < 0) {
+                        e.preventDefault();
+                        that.next();
+                    } else {
+                        e.preventDefault();
+                        that.previous(true);
+                    }
+                }
+            });
+        }
+        function elemShow(page) {
+            setTimeout(function () {
+                $("[data-role=animation]", page).addClass("show");
+            }, 400);
+        }
+        function elemReset(page) {
+            setTimeout(function () {
+                $("[data-role=animation]", page).removeClass("show");
+            }, 400);
+        }
+        window.VPage = VPage;
+    })();
+    new VPage();
+    $(window).on("load", function () {
+      $(".fttpage.current [data-role=animation]").addClass("show");
+    });
+    addEventListener("load", function() {
+        setTimeout(function() {
+            scrollTo(0, 1);
+        }, 100);
+    }, false);
+    </script>
+</body>
+</html>
