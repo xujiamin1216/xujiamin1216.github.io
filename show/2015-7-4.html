@@ -121,12 +121,15 @@ html, body {
     -webkit-transform: rotate(-346deg);
 }
 #page4 > div p, #page2 > div p, #page3 > div p {
-    margin-top: 50px;
-    font-size: 24px;
-    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    /*text-align: center;*/
     font-weight: bold;
     -webkit-transform: scale(0);
     -webkit-transition: .4s linear;
+}
+#page4 > div p:nth-child(2), #page2 > div p:nth-child(2), #page3 > div p:nth-child(2) {
+    margin-top: 50px;
 }
 #page4 > div p.show, #page2 > div p.show, #page3 > div p.show {
     -webkit-transform: scale(1);
@@ -246,36 +249,38 @@ html, body {
     <li id="page2" class="fttpage">
         <div>
             <div data-role="animation" class="photo-panel">
-                <img src="/img/show/2015-7-4/smile.jpg" />
+                <img src="/img/show/2015-7-4/image2.jpg" />
             </div>
-            <p data-role="animation">笑，可以融化一切</p>
+            <p data-role="animation">人生实在是一本书，内容复杂，份量沉重，值得翻到个人所能翻到的最后一页，而且必须慢慢的翻。</p>
         </div>
         <i class="page-arrow"></i>
     </li>
     <li id="page3" class="fttpage">
         <div>
             <div data-role="animation" class="photo-panel">
-                <img src="/img/show/2015-7-4/chaocai.jpg" />
+                <img src="/img/show/2015-7-4/image2.jpg" />
             </div>
-            <p data-role="animation">专注，只为做出美味</p>
+            <p data-role="animation">一颗平常心去淡然</p>
+            <p data-role="animation">一颗宁静心去喜悦</p>
+            <p data-role="animation">平静地守候这个世界</p>
         </div>
         <i class="page-arrow"></i>
     </li>
     <li id="page4" class="fttpage">
         <div>
-            <img data-role="animation" src="/img/show/2015-7-4/eat.jpg" />
-            <p data-role="animation">恬静，只为享受美食</p>
+            <img data-role="animation" src="/img/show/2015-7-4/image1.jpg" />
+            <p data-role="animation">繁华落尽是平淡，喧嚣之后，依旧安详。</p>
         </div>
         <i class="page-arrow"></i>
     </li>
     <li id="page5" class="fttpage">
         <div>
             <div data-role="animation" class="photo-panel">
-                <img src="/img/show/2015-7-4/person.jpg">
+                <img src="/img/show/2015-7-4/image2.jpg">
             </div>
         </div>
-        <p data-role="animation" class="my-wish first"><span>快乐生活<i></i></span></p>
-        <p data-role="animation" class="my-wish second"><span>笑着过每一天<i></i></span></p>
+        <p data-role="animation" class="my-wish first"><span>坎坷路途，给身边一份温暖<i></i></span></p>
+        <p data-role="animation" class="my-wish second"><span>风雨人生，给自己一个微笑<i></i></span></p>
     </li>
 </ul>
     <script type="text/javascript" src="/js/zepto.min.js"></script>
